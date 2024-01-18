@@ -1,13 +1,13 @@
 library(ggplot2)
 library(dplyr)
 library(patchwork)
-setwd("/Users/alyshasaad-berreta/Desktop/GitHub")
 
-file_path <- "/Users/alyshasaad-berreta/Desktop/GitHub/group5/Crash_Reporting.csv"
-data <- read.csv(file_path)
+#setwd("/Users/alyshasaad-berreta/Desktop/GitHub")
+#file_path <- "/Users/alyshasaad-berreta/Desktop/GitHub/group5/Crash_Reporting.csv"
+#data <- read.csv(file_path)
 
 # Focusing data only on speed limit and injury severity: 
-speedLimitData <- data %>%
+speedLimitData <- read.csv("Crash_Reporting.csv") %>%
   select(Speed.Limit, Injury.Severity)
 
 # Preprocessing: 
@@ -78,4 +78,4 @@ suspectedSeriousInjuriesPlt
 plots <- list(fatalInjuriesPlt, possibleInjuriesPlt, suspectedMinorInjuriesPlt, suspectedSeriousInjuriesPlt)
 grid <- wrap_plots(plots, ncol = 2)
 
-ggsave("plot/speedGrid.png", plot = my_plt, width = 18, height = 14, units = "cm")
+ggsave("plot/speedGrid.png", plot = grid, width = 18, height = 14, units = "cm")
