@@ -78,3 +78,4 @@ suspectedSeriousInjuriesPlt
 plots <- list(fatalInjuriesPlt, possibleInjuriesPlt, suspectedMinorInjuriesPlt, suspectedSeriousInjuriesPlt)
 grid <- wrap_plots(plots, ncol = 2)
 
+ggsave("plot/speedGrid.png", plot = my_plt, width = 18, height = 14, units = "cm")
