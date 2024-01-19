@@ -2,10 +2,6 @@ library(ggplot2)
 library(dplyr)
 library(patchwork)
 
-#setwd("/Users/alyshasaad-berreta/Desktop/GitHub")
-#file_path <- "/Users/alyshasaad-berreta/Desktop/GitHub/group5/Crash_Reporting.csv"
-#data <- read.csv(file_path)
-
 # Focusing data only on speed limit and injury severity: 
 speedLimitData <- read.csv("Crash_Reporting.csv") %>%
   select(Speed.Limit, Injury.Severity)
